@@ -1,0 +1,213 @@
+:root {
+  --primaryColor: 186, 0, 1; /*rgb(186, 0, 1) #ba0001 Principal*/
+  --secondaryColor: 0, 33, 74; /*rgb(0, 33, 74) #00214a Secundario*/
+  --accentColor: 191, 4, 38; /*rgb(191, 4, 38) #BF0426 Acento*/
+  
+  --black: 13, 13, 13; /*rgb(13, 13, 13)  #0D0D0D*/
+  --white: 255, 255, 255; /*rgb(255, 255, 255) #FFFFFF*/
+}
+
+/* 
+==================
+Google fonts
+
+.manrope-<uniquifier> {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+
+.newsreader-<uniquifier> {
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+
+
+
+
+==================
+*/
+
+
+/* 
+==================
+Global Styles
+==================
+*/
+
+body {
+  min-height: 100vh;
+  max-width: 100%;
+  color: rgb(var(--black));
+  background-color: rgb(var(--white));
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+}
+
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* 
+==================
+Fonts/Colors
+==================
+*/
+
+body{
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.title{
+  font-family: "Newsreader", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.title--big{
+    font-size: 36px;
+}
+
+.header{
+    color: rgb(var(--white));
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.paragraph{
+    text-align: justify;
+    line-height: 1.4em;
+}
+
+.curso-card__title{
+    color: rgb(var(--white));
+}
+
+
+/* 
+==================
+Layout
+==================
+*/
+
+/* INICIO Nav menu */
+
+.header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    width: 50px;
+}
+
+.nav-menu{
+    width: 30%;
+    margin-left: 1.8em;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* FIN Nav menu */
+
+
+.header {
+    background-color: rgb(var(--primaryColor));
+}
+
+.main{
+    /* background-color: aqua; */
+    margin: 0 auto 0 auto;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    padding: -4px 0px -4px 0px;
+    flex-direction: column;
+}
+
+.banner{
+    width: 100%;
+}
+
+.paragraph{
+    text-align: center;
+    margin-bottom: 1.5em;
+}
+
+.paragraph--center{
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.paragraph--end{
+    margin-top: 0;
+}
+
+.title--presentacion{
+    margin-top: 0.2em;
+}
+
+.img-recital{
+    width: 100%;
+    max-width: 800px;
+}
+
+.cursos{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cursos-title{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    align-self: center;
+}
+
+.cursos__container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.curso{
+    background-color: rgb(var(--secondaryColor));
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.curso__img{
+    width: 100%;
+}
+
+.curso-card__title{
+    margin: 0.8em;
+}
