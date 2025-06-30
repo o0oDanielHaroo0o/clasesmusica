@@ -23,16 +23,13 @@
 
     <body>
         <header class="header">
-            <div class="logo">
-                <img class="logo" src="./assets/img/music-note-circle-svgrepo-com.svg" alt="logo">
-            </div>
+                <img class="logo" src="./assets/img/logo.png" alt="logo">
             <!-- navigation menu start -->
                 <nav class="nav-menu">
                     <ul class="menu">
-                        <li class="menu-item"><a href="javascript:void(0)">Inicio</a></li>
-                        <li class="menu-item"><a href="javascript:void(0)">Cursos</a></li>
-                        <li class="menu-item"><a href="javascript:void(0)">Galería</a></li>
-                        <li class="menu-item"><a href="javascript:void(0)">Contactos</a></li>
+                        <li class="menu-item"><a href="./index.html">Inicio</a></li>
+                        <li class="menu-item"><a href="./cursos.html">Cursos</a></li>
+                        <li class="menu-item"><a href="./galeria.html">Galería</a></li>
                     </ul>
                 </nav>
                 <!-- navigation menu end -->
@@ -46,42 +43,69 @@
 
             <p class="paragraph paragraph--end">Con nuestro equipo de docentes capacitados y apasionados por el mundo del arte, tu familia estará acompañada en cada paso del proceso.</p>
             
-            <h1 class="title title--presentacion">¿Quiénes somos?</h1>
-            
-            <p class="paragraph">Somos un grupo de profesores jóvenes con años de experiencia, pero sobre todo, con una gran pasión por enseñar música. Nos encanta acompañar a cada estudiante en su propio camino, ajustando nuestras clases a sus intereses y ritmo. Creemos que cada persona tiene una forma única de aprender, por eso nos adaptamos para que la música sea siempre divertida, accesible y, sobre todo, algo que se disfrute.</p>
-            <p class="paragraph paragraph--end">Si buscas clases donde la flexibilidad y el enfoque personalizado marcan la diferencia, ¡estamos aquí para ayudarte!</p>
-            
-            <div class="img-container">
-                <img class="img-recital" src="./assets/img/foto-recital.jpg" alt="foto recital mayo 2024">    
-            </div>
+            <section class="presentacion">
+                <h1 class="title title--presentacion">¿Quiénes somos?</h1>
+                
+                <p class="paragraph presentacion__paragraph">Somos un grupo de profesores jóvenes con años de experiencia y con una gran pasión por enseñar música. Creemos que cada persona tiene una forma única de aprender, por eso nos adaptamos a su ritmo para que la música sea siempre algo que se disfrute.</p>
+                <div class="presentacion__destacado">
+                    <img class="img-recital" src="./assets/img/foto-recital.jpg" alt="foto recital mayo 2024">
+                    <article class="presentacion__destacado__text">
+                        <p class="paragraph presentacion__destacado__paragraph">Muchos padres de familia como tú, confían en nosotros.
+                        </p>
+                        <p class="paragraph presentacion__destacado__paragraph">Nos enorgullece ver como sus hijos crecen y disfrutan de su aprendizaje musical.
+                        </p>
+                    </article>
+                </div>
+            </section>
 
-            <p class="paragraph paragraph--center">Muchos padres de familia como tú, confían en nosotros. </p>
-             <p class="paragraph paragraph--center">Nos enorgullece ver cómo sus hijos crecen y disfrutan cada paso en su aprendizaje musical.</p>
-
-            <div class="cursos">
+            <section class="cursos">
 
                 <h2 class="cursos-title title title--big">¡Descubre nuestros cursos personalizados!</h2>
                 
                 <div class="cursos__container">
-                    <div class="curso">
-                        <img src="./assets/img/curso-guitarra.jpg" alt="imagen curso de guitarra" class="curso__img">
+                    <article class="curso">
+                        <img src="./assets/img/curso-guitarra-card.jpg" alt="imagen curso de guitarra" class="curso__img">
                         <h3 class="curso-card__title title">Guitarra</h3>
-                    </div>
+                    </article>
                     
-                    <div class="curso">
-                        <img src="./assets/img/curso-piano.jpg" alt="imagen curso de piano" class="curso__img">
+                    <article class="curso">
+                        <img src="./assets/img/curso-piano-card.jpg" alt="imagen curso de piano" class="curso__img">
                         <h3 class="curso-card__title title">Piano</h3>
-                    </div>
+                    </article>
                     
-                    <div class="curso">
-                        <img src="./assets/img/curso-guitarra-electrica.jpg" alt="imagen curso de guitarra eléctrica" class="curso__img">
+                    <article class="curso">
+                        <img src="./assets/img/curso-guitarra-electrica-card.jpg" alt="imagen curso de guitarra eléctrica" class="curso__img">
                         <h3 class="curso-card__title title">Guitarra Eléctrica</h3>
-                    </div>
+                    </article>
                 </div>
 
-            </div>
+            </section>
+
+            <section class="vacacional-contact-container">
+                <img src="./assets/img/arte-vacacional2.png" alt="arte vacacional" class="vacacional-contact__art">
+                <article class="vacacional-contact">
+                    <h3 class="title vacacional-contact__title">Tienes la oportunidad de conocer el poder transformador de la música</h3>
+                    <p class="paragraph">Contáctanos para mayor información:</p>
+                    <a href="https://wa.link/remmoh" target="_blank" rel="noopener" class="vacacional-contact__whatsapp--container">
+                        <img src="./assets/img/whatsapp logo largo.png" alt="chatear por whatsapp" class="vacacional-contact__whatsapp">
+                    </a>
+                </article>
+            </section>
+
 
         </main>
+
+        <footer class="footer">
+            <img src="./assets/img/logo.png" alt="logo pie de página" class="logo">
+            <p class="footer__contact-numbers">
+                Para una asesoría personalizada puedes contactarnos a los teléfonos: 0979397888  /  0987672956
+            </p>
+        </footer>
+
+        <!-- WhatsApp float -->
+    <a href="https://wa.link/remmoh" class="whatsapp-float" target="_blank" rel="noopener">
+        <img src="./assets/img/whatsapplogo.png" alt="WhatsApp" />
+    </a>
         
     </body>
 
