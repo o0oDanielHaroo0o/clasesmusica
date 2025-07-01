@@ -1,7 +1,7 @@
 :root {
   --primaryColor: 186, 0, 1; /*rgb(186, 0, 1) #ba0001 Principal*/
   --secondaryColor: 0, 33, 74; /*rgb(0, 33, 74) #00214a Secundario*/
-  --accentColor: 83, 147, 212; /*rgb(83, 147, 212) #5393D4 Acento*/
+  --thirdColor: 83, 147, 212; /*rgb(83, 147, 212) #5393D4 Tercer Color*/
   
   --black: 13, 13, 13; /*rgb(13, 13, 13)  #0D0D0D*/
   --white: 255, 255, 255; /*rgb(255, 255, 255) #FFFFFF*/
@@ -43,11 +43,6 @@ Global Styles
 body {
   min-height: 100vh;
   max-width: 100%;
-  color: rgb(var(--black));
-  background-color: rgb(var(--white));
-  font-family: 'Anton', sans-serif;
-  font-weight: 400;
-  font-size: 1.125rem;
 }
 
 img {
@@ -77,6 +72,9 @@ body{
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  font-size: 1.125rem;
+  color: rgb(var(--black));
+  background-color: rgb(var(--white));
 }
 
 .title{
@@ -127,11 +125,20 @@ Layout
 
 /* INICIO Nav menu */
 
+.body{
+    display: flex;
+    flex-direction: column;
+}
+
 .header{
     display: flex;
     width: 100%;
     align-items: center;
     justify-content: center;
+}
+
+.main{
+    flex: 1;
 }
 
 .logo{
@@ -147,6 +154,20 @@ Layout
 .menu{
     display: flex;
     justify-content: space-between;
+}
+
+.menu-item{
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover{
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item--active{
+  font-weight: 800;
+  border-bottom: 1px solid rgb(var(--white));
 }
 
 /* FIN Nav menu */
@@ -244,7 +265,7 @@ Layout
 }
 
 .presentacion__destacado__text{
-    background-color: rgb(var(--accentColor));
+    background-color: rgb(var(--thirdColor));
     padding: 2.2em;
 }
 
@@ -254,16 +275,15 @@ Layout
 }
 
 .title--presentacion,
-.presentacion__destacado__paragraph{
+.presentacion__destacado__paragraph,
+.cursos-title,
+.lista-cursos__curso__title{
         text-shadow: 2px 2px 0 #000;
 }
 
-.vacacional-contact__title{
+.vacacional-contact__title,
+.title--cursos{
         text-shadow: 2px 2px 0 #bcbcbc;
-}
-
-.cursos-title{
-        text-shadow: 2px 2px 0 #000;
 }
 
 .img-recital{
@@ -309,16 +329,26 @@ Layout
 .cursos__container{
     display: flex;
     justify-content: center;
+    gap: 3em;    
     margin-bottom: 3.8em;
+}
+
+.cursos__container a{
+    width: 27%;
 }
 
 .curso{
     background-color: rgb(var(--primaryColor));
-    width: 25%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 3em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curso:hover{
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 
 .curso__img{
@@ -368,8 +398,8 @@ Layout
     transform: scale(1.1);
 }
 
-
 .footer{
+    width: 100%;
     background-color: rgb(var(--primaryColor));
     display: flex;
     align-items: center;
@@ -400,4 +430,230 @@ WhatsApp float
 }
 .whatsapp-float img:hover {
   transform: scale(1.1);
+}
+
+
+/* 
+==================
+Página cursos
+==================
+*/
+
+.title--cursos,
+.lista-cursos__curso__title{
+    text-transform: uppercase;
+    font-size: 1.5em;
+    font-weight: 800;
+}
+
+.title--cursos{
+    margin: 1.5em 0;
+}
+
+.lista-cursos__curso{
+    display: flex;
+    flex-direction: row-reverse;
+    margin-bottom: 2.5em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.lista-cursos__curso:hover{
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.lista-cursos__curso__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid rgb(var(--secondaryColor));
+    border-right: 1px solid rgb(var(--secondaryColor));
+    border-bottom: 1px solid rgb(var(--secondaryColor));
+}
+
+.lista-cursos__curso__title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 35%;
+    background-color: rgb(var(--primaryColor));
+    color: rgb(var(--white));
+    margin: 0;
+    text-align: center;
+}
+
+.lista-cursos__curso__title--secondarycolor{
+    background-color: rgb(var(--secondaryColor));
+}
+
+.lista-cursos__curso__title--thirdcolor{
+    background-color: rgb(var(--thirdColor));
+}
+
+.lista-cursos__curso__subtitle{
+    font-weight: 700;
+}
+
+.lista-cursos-curso__description{
+    margin-top: 0;
+    padding: 0 7em;
+}
+
+.lista-cursos__curso__img{
+    width: 50%;
+}
+
+.bold-text{
+    font-weight: 700;
+}
+
+/* 
+==================
+Página curso individual
+==================
+*/
+
+.header-curso__img,
+.caract-curso__element__img{
+    width: 500px;
+}
+
+.header-curso{
+    display: flex;
+    margin-bottom: 2em;
+}
+
+.header-curso__img{
+    width: 65%;
+}
+
+.header-curso__quote{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    width: 35%;
+}
+
+.header-curso__title{
+    font-size: 3em;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 0.4em;
+    width:min-content;
+    text-indent: -0.5em;
+}
+
+.header-curso__subtitle{
+    font-size: 1.5em;
+    margin: 0 0 1em 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-indent: 4em;
+}
+
+.curso-intro{
+    text-align: justify;
+
+}
+
+.beneficios-curso{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.beneficios-curso__title,
+.caract-curso__title,
+.profesor-curso__title{
+    text-transform: uppercase;
+    font-weight: 800;
+    margin-bottom: 1.5em;
+}
+
+.beneficios-curso__content-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.beneficios-curso__content{
+    width: 30%;
+}
+
+.beneficios-curso__content__list{
+    background-color: rgb(var(--secondaryColor));
+    color: rgb(var(--white));
+    list-style: disc;
+    padding: 3em 2em 3em 3em;
+    height: 100%;
+}
+
+.beneficios-curso__content__list--thirdcolor{
+    background-color: rgb(var(--thirdColor));
+}
+
+.caract-curso__element {
+  border: 1px solid rgb(var(--secondaryColor));
+  position: relative;
+  padding-top: 1em;
+  margin: 2rem auto;
+  width: 70%;
+}
+
+.caract-curso__element__title {
+  position: absolute;
+  top: -1.2rem; /* sobresale del borde */
+  left: -1rem;
+  background-color: rgb(var(--secondaryColor));
+  color: rgb(var(--white));
+  padding: 0.7rem 8rem;
+  font-weight: 800;
+  border-radius: 0;
+  font-size: 1rem;
+  z-index: 2;
+  margin: 0;
+}
+
+.caract-curso__element__title--primarycolor{
+    background-color: rgb(var(--primaryColor));
+}
+
+.caract-curso__element__title--thirdcolor{
+    background-color: rgb(var(--thirdColor));
+}
+
+.caract-curso__element__content {
+  display: flex;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.caract-curso__element__img {
+  width: 40%;
+  height: fit-content;
+}
+
+.caract-curso__element__text {
+  text-align: justify;
+}
+
+.profesor-curso__img-container{
+    background-image: url(../assets/img/background-profesores.png);
+    background-repeat: no-repeat;
+     background-position: 66% 50%;
+    background-size: 78%;
+}
+
+.profesor-curso__img{
+    width: 40%;
+    margin: auto;
+    padding-bottom: 4em;
+}
+
+.profesor-curso__bio{
+    text-align: justify;
+    margin-bottom: 2em;
 }
