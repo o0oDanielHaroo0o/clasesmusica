@@ -40,6 +40,10 @@ Global Styles
 ==================
 */
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   max-width: 100%;
@@ -85,7 +89,7 @@ body{
 }
 
 .title--big{
-    font-size: 36px;
+    font-size: clamp(1.8rem, 4vw, 2.25rem);
 }
 
 .header{
@@ -123,12 +127,12 @@ Layout
 ==================
 */
 
-/* INICIO Nav menu */
-
-.body{
+.layout{
     display: flex;
     flex-direction: column;
 }
+
+/* INICIO Nav menu */
 
 .header{
     display: flex;
@@ -137,13 +141,14 @@ Layout
     justify-content: center;
 }
 
-.main{
-    flex: 1;
-}
-
 .logo{
     width: 45px;
     margin: 0.5em 0 0.5em 1em;
+}
+
+.logo-text{
+    width: 150px;
+    padding-top: 6px;
 }
 
 .nav-menu{
@@ -177,14 +182,15 @@ Layout
     background-color: rgb(var(--primaryColor));
 }
 
-.main{
+.main-content{
     /* background-color: aqua; */
+    flex: 1;
     margin: 0 auto 0 auto;
     max-width: 1200px;
     display: flex;
     align-items: center;
-    padding: -4px 0px -4px 0px;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .banner{
@@ -282,7 +288,8 @@ Layout
 }
 
 .vacacional-contact__title,
-.title--cursos{
+.title--cursos,
+.header-curso__title{
         text-shadow: 2px 2px 0 #bcbcbc;
 }
 
@@ -385,6 +392,10 @@ Layout
     text-transform: uppercase;
 }
 
+.vacacional-contact__content{
+    margin:0 0 0.7rem 0;
+}
+
 .vacacional-contact__whatsapp--container{
     display: flex;
     justify-content: center;
@@ -393,6 +404,7 @@ Layout
 .vacacional-contact__whatsapp{
   transition: transform 0.3s ease;
   width: 45%;
+  height: auto;
 }
 .vacacional-contact__whatsapp:hover{
     transform: scale(1.1);
@@ -515,11 +527,6 @@ Página curso individual
 ==================
 */
 
-.header-curso__img,
-.caract-curso__element__img{
-    width: 500px;
-}
-
 .header-curso{
     display: flex;
     margin-bottom: 2em;
@@ -556,7 +563,6 @@ Página curso individual
 
 .curso-intro{
     text-align: justify;
-
 }
 
 .beneficios-curso{
@@ -568,7 +574,8 @@ Página curso individual
 
 .beneficios-curso__title,
 .caract-curso__title,
-.profesor-curso__title{
+.profesor-curso__title,
+.faq-curso_title{
     text-transform: uppercase;
     font-weight: 800;
     margin-bottom: 1.5em;
@@ -580,19 +587,26 @@ Página curso individual
 }
 
 .beneficios-curso__content{
-    width: 30%;
+    width: 35%;
 }
 
 .beneficios-curso__content__list{
-    background-color: rgb(var(--secondaryColor));
     color: rgb(var(--white));
-    list-style: disc;
-    padding: 3em 2em 3em 3em;
     height: 100%;
+    text-align: center;
 }
 
-.beneficios-curso__content__list--thirdcolor{
+.beneficios-curso__content__list__beneficio{
+    background-color: rgb(var(--secondaryColor));
+    padding: 1em;
+}
+
+.beneficios-curso__content__list__beneficio--thirdcolor{
     background-color: rgb(var(--thirdColor));
+}
+
+.caract-curso__title{
+    margin-bottom: 2.5em;
 }
 
 .caract-curso__element {
@@ -658,3 +672,171 @@ Página curso individual
     text-align: justify;
     margin-bottom: 2em;
 }
+
+.faq-curso{
+    margin-bottom: 2em;
+}
+
+.faq-curso__content{
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-curso__question{
+    font-weight: 800;
+}
+
+.faq-curso-img{
+    width: 70%;
+    align-self: center;
+}
+
+/* 
+==================
+Media Querys
+==================
+*/
+
+/* Escritorios pequeños 1220px*/
+
+@media (max-width:1220px) {
+
+    .presentacion__destacado {
+    padding: 2em;
+  }
+
+  .img-recital {
+    max-width: 70%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .presentacion__destacado__text {
+    padding: 2em 1em;
+  }
+  
+  .vacacional-contact__art{
+      object-fit: cover;
+      width: 60%;
+  }
+
+  .curso-main-content,
+  .cursos-page-main-content{
+    margin: 0 1em;
+  }
+  
+  .caract-curso__element__img{
+    object-fit: cover;
+    height: auto;
+  }
+
+}
+
+
+/* Tablets grandes 1080px*/
+
+@media (max-width:1080px) {
+    
+    .verano-text{
+      margin: 0 1em;
+    }
+    .presentacion__destacado {
+    padding: 0;
+    flex-direction: column;
+  }
+
+  .img-recital {
+    width: 100%;
+    max-width: fit-content;
+  }
+
+  .presentacion__destacado__text {
+    padding: 1em 1em;
+  }
+
+  .presentacion__destacado__paragraph{
+    text-align: center;
+  }
+
+  .presentacion{
+    background-position: 0% 95%;
+    background-size: 100%;
+  }
+
+  .cursos{
+    background-position: -2.5em 100%;
+  }
+
+  .cursos__container{
+    width: 100%;
+  }
+
+  .curso__img{
+    height: auto;
+  }
+
+  .vacacional-contact-container{
+    flex-direction: column;
+  }
+
+  .vacacional-contact__art{
+    max-width: none;
+    width: 100%;
+  }
+
+  .cursos-page-main-content{
+    margin: 0;
+  }
+
+  .title--cursos{
+    text-align: center;
+  }
+
+  .lista-cursos__curso__img{
+    width: 40%;
+    height: auto;
+  }
+
+  .lista-cursos__curso__title{
+    padding: 0.3em 0;
+  }
+
+  .lista-cursos-curso__description{
+    padding: 0 1em;
+  }
+
+  .header-curso__title{
+    font-size: 2.5em;
+  }
+
+  .header-curso__subtitle{
+    font-size: 1.5em;
+  }
+
+  .beneficios-curso__content{
+    width: 45%;
+  }
+
+  .beneficios-curso__content__list__beneficio{
+    padding: 1em 0.16em;
+  }
+
+  .caract-curso__element{
+    width: 95%;
+  }
+
+}
+
+@media (max-width: 900px) {
+  .header-curso__title{
+    font-size: 2em;
+  }
+
+  .header-curso__subtitle{
+    font-size: 1em;
+  }
+}
+
+/* Tablets verticales y teléfonos grandes 768px*/
+
+/* Teléfono 360px*/
