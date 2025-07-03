@@ -139,6 +139,13 @@ Layout
     width: 100%;
     align-items: center;
     justify-content: center;
+    background-color: rgb(var(--primaryColor));
+}
+
+.logo-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logo{
@@ -152,13 +159,13 @@ Layout
 }
 
 .nav-menu{
-    width: 30%;
     margin-left: 1.8em;
 }
 
 .menu{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 2.5em;
 }
 
 .menu-item{
@@ -175,12 +182,22 @@ Layout
   border-bottom: 1px solid rgb(var(--white));
 }
 
-/* FIN Nav menu */
-
-
-.header {
-    background-color: rgb(var(--primaryColor));
+.hamburger{
+  display: none;
+  cursor: pointer;
 }
+
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: rgb(var(--white));
+}
+
+/* FIN Nav menu */
 
 .main-content{
     /* background-color: aqua; */
@@ -232,20 +249,13 @@ Layout
     z-index: -2;
 }
 
-.presentacion__background-img{
-    position: absolute;
-    left: 15%;
-    top: 28%;
-    width: 70%;
-}
-
 .presentacion::before{
-    top:0;
+    top: 0;
     background-color: rgb(var(--primaryColor));
 }
 
 .presentacion::after{
-    bottom:0;
+    bottom: 0;
     background-color: rgb(var(--white));
 }
 
@@ -517,6 +527,10 @@ Página cursos
     width: 50%;
 }
 
+.lista-cursos__curso__img--mobile{
+    display: none;
+}
+
 .bold-text{
     font-weight: 700;
 }
@@ -549,7 +563,7 @@ Página curso individual
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 0.4em;
-    width:min-content;
+    width: min-content;
     text-indent: -0.5em;
 }
 
@@ -737,10 +751,10 @@ Media Querys
 
 @media (max-width:1080px) {
     
-    .verano-text{
-      margin: 0 1em;
-    }
-    .presentacion__destacado {
+  .verano-text{
+    margin: 0 1em;
+   }
+  .presentacion__destacado {
     padding: 0;
     flex-direction: column;
   }
@@ -838,5 +852,205 @@ Media Querys
 }
 
 /* Tablets verticales y teléfonos grandes 768px*/
+@media (max-width: 768px){
+  .hamburger{
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+  
+  .hamburger.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .header{
+    justify-content: space-between;
+    position: fixed;
+    z-index: 5;
+    /* padding: 10px 0;  Evita que se oculte el logo en celular*/
+  }
+
+  .nav-menu{
+    width: auto;
+    margin-right: 15px;
+  }
+
+  .menu{
+    position: absolute;
+    left:-100%;
+    top: 61px;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgb(var(--primaryColor));
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+  }
+
+  .menu.active{
+    left: 0;
+  }
+  
+  .menu-item{
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .menu-item--active{
+    border: none;
+    text-decoration: underline;
+  }
+  
+  .menu-item-link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .main-content,
+  .footer{
+    position: relative;
+    top: 61px;
+  }
+
+  .profesor-curso__img{
+    width: 55%;
+  }
+}
+
+/* Teléfono grande 420px*/
+
+@media (max-width: 420px){
+
+  .title--presentacion,
+  .presentacion__paragraph,
+  .presentacion__destacado{
+    width: 100%;
+  }
+
+  .presentacion__paragraph{
+    padding: 0 1em;
+  }
+
+  .presentacion__destacado{
+    margin-bottom: 0;
+  }
+
+  .cursos__container{
+    background-color: rgb(var(--secondaryColor));
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    padding-bottom: 3em;
+    margin-bottom: 0;
+
+  }
+
+  .cursos-title{
+    text-align: center;
+  }
+
+  .cursos__container a{
+    width: 80%;
+  }
+
+  .vacacional-contact-container{
+    margin-bottom: 0;
+  }
+
+  .vacacional-contact{
+    padding-bottom: 1em;
+  }
+
+  .footer{
+    padding: 1em 0;
+  }
+
+  .footer__contact-numbers{
+    padding-right: 2.7em;
+  }
+
+  .lista-cursos__curso__container{
+    margin: 1em;
+    border-left: 1px solid rgb(var(--secondaryColor));
+  }
+
+  .lista-cursos__curso__img{
+    display: none;
+  }
+  
+  .lista-cursos__curso__img--mobile{
+    display: block;
+    width: 100%;
+  }
+  
+  .header-curso{
+    display: block;
+    position: relative;
+  }
+
+  .header-curso__quote{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    right: -50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .header-curso__img{
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+  }
+
+  .header-curso__title{
+    width: 80%;
+  }
+
+  .header-curso__subtitle{
+    text-align: end;
+  }
+
+  .beneficios-curso__content-container{
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .beneficios-curso__content{
+    width: 100%;
+  }
+
+  .beneficios-curso__content__list__beneficio{
+    margin-top: 0;
+  }
+
+  .caract-curso__element__title{
+    width: 70%;
+  }
+
+  .caract-curso__element__content{
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .caract-curso__element__img{
+    width: 100%;
+  }
+
+  .profesor-curso__img{
+    width: 100%;
+    padding: 0;
+  }
+
+}
 
 /* Teléfono 360px*/

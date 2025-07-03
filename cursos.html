@@ -4,11 +4,11 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <!-- CSS -->
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/styles.css">
-        <title>Clases música</title>
+        <title>Alamúsica</title>
 
         <!-- Google Fonts -->
             <!-- Manrope -->
@@ -23,15 +23,21 @@
 
     <body class="layout">
         <header class="header">
+            <div class="logo-container">
                 <img class="logo" src="./assets/img/logo.png" alt="logo">
                 <img src="./assets/img/logo-tipografia.png" alt="logo text" class="logo-text">
+            </div>
             <!-- navigation menu start -->
                 <nav class="nav-menu">
                     <ul class="menu">
-                        <li class="menu-item"><a href="./index.html">Inicio</a></li>
-                        <li class="menu-item menu-item--active"><a href="./cursos.html">Cursos</a></li>
-                        <li class="menu-item"><a href="./galeria.html">Galería</a></li>
+                        <li class="menu-item"><a href="./index.html" class="menu-item-link">Inicio</a></li>
+                        <li class="menu-item menu-item--active"><a href="./cursos.html" class="menu-item-link">Cursos</a></li>
                     </ul>
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
                 </nav>
                 <!-- navigation menu end -->
         </header>
@@ -49,6 +55,7 @@
                                 <h2 class="title lista-cursos__curso__title">
                                     Curso de <br> Guitarra
                                 </h2>
+                                <img src="./assets/img/curso-guitarra-clasica.png" alt="Curso de guitarra" class="lista-cursos__curso__img--mobile">
                                 <h3 class="lista-cursos__curso__subtitle title">
                                     ¿A quién está dirigido el curso?
                                 </h3>
@@ -69,6 +76,7 @@
                                 <h2 class="title lista-cursos__curso__title lista-cursos__curso__title--secondarycolor">
                                     Curso de <br> Piano
                                 </h2>
+                                <img src="./assets/img/curso-piano.png" alt="Curso de guitarra" class="lista-cursos__curso__img--mobile">
                                 <h3 class="lista-cursos__curso__subtitle title">
                                     ¿A quién está dirigido el curso?
                                 </h3>
@@ -89,6 +97,7 @@
                                 <h2 class="title lista-cursos__curso__title lista-cursos__curso__title--thirdcolor">
                                     Curso de <br> Guitarra Eléctrica
                                 </h2>
+                                <img src="./assets/img/curso-guitarra-electrica.png" alt="Curso de guitarra" class="lista-cursos__curso__img--mobile">
                                 <h3 class="lista-cursos__curso__subtitle title">
                                     ¿A quién está dirigido el curso?
                                 </h3>
@@ -119,6 +128,7 @@
         <img src="./assets/img/whatsapplogo.png" alt="WhatsApp" />
     </a>
         
+    <script src="./js/scripts.js"></script>
     </body>
 
 </html>
