@@ -10,6 +10,8 @@
 /* 
 ==================
 Google fonts
+ <weight>: Use a value from 200 to 800
+ <uniquifier>: Use a unique and descriptive class name
 
 .manrope-<uniquifier> {
   font-family: "Manrope", sans-serif;
@@ -19,16 +21,21 @@ Google fonts
 }
 
 
+<weight>: Use a value from 100 to 900
+<uniquifier>: Use a unique and descriptive class name
 
-.newsreader-<uniquifier> {
-  font-family: "Newsreader", serif;
+.montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: <weight>;
   font-style: normal;
 }
 
-
-
+.anton-regular {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 
 ==================
 */
@@ -64,6 +71,10 @@ ul{
   padding: 0;
 }
 
+button{
+  border: none;
+}
+
 
 /* 
 ==================
@@ -81,8 +92,23 @@ body{
   background-color: rgb(var(--white));
 }
 
+.header-curso__quote{
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo-text,
 .title{
-  font-family: "Newsreader", serif;
+  font-family: "Montserrat", sans-serif;
+}
+
+.logo-text,
+.menu-item-link{
+  font-size: 1.2rem;
+}
+
+.title{
   font-optical-sizing: auto;
   font-weight: 600;
   font-style: normal;
@@ -154,8 +180,10 @@ Layout
 }
 
 .logo-text{
-    width: 150px;
-    padding-top: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
 }
 
 .nav-menu{
@@ -212,6 +240,11 @@ Layout
 
 .banner{
     width: 100%;
+}
+
+.banner--mobile,
+.vacacional-contact__art--mobile{
+  display: none;
 }
 
 .paragraph{
@@ -291,20 +324,22 @@ Layout
 }
 
 .title--presentacion,
-.presentacion__destacado__paragraph,
 .cursos-title,
 .lista-cursos__curso__title{
         text-shadow: 2px 2px 0 #000;
 }
 
 .vacacional-contact__title,
-.title--cursos,
-.header-curso__title{
+.title--cursos{
         text-shadow: 2px 2px 0 #bcbcbc;
 }
 
 .img-recital{
     width: 75%;
+}
+
+.img-recital--mobile{
+    display: none;
 }
 
 .cursos{
@@ -415,6 +450,7 @@ Layout
   transition: transform 0.3s ease;
   width: 45%;
   height: auto;
+  min-width: 230px;
 }
 .vacacional-contact__whatsapp:hover{
     transform: scale(1.1);
@@ -563,7 +599,7 @@ Página curso individual
     font-weight: 800;
     text-transform: uppercase;
     margin-bottom: 0.4em;
-    width: min-content;
+    width: 50%;
     text-indent: -0.5em;
 }
 
@@ -589,10 +625,26 @@ Página curso individual
 .beneficios-curso__title,
 .caract-curso__title,
 .profesor-curso__title,
-.faq-curso_title{
+.faq-curso__title{
     text-transform: uppercase;
     font-weight: 800;
+    margin-top: 0;
+    padding: 0.8em;
     margin-bottom: 1.5em;
+    color: rgb(var(--white));
+}
+
+.caract-curso__title,
+.beneficios-curso__title{
+  background-color: rgb(var(--primaryColor));
+}
+
+.profesor-curso__title{
+  background-color: rgb(var(--secondaryColor));
+}
+
+.faq-curso__title{
+  background-color: rgb(var(--thirdColor));
 }
 
 .beneficios-curso__content-container{
@@ -662,7 +714,6 @@ Página curso individual
 
 .caract-curso__element__img {
   width: 40%;
-  height: fit-content;
 }
 
 .caract-curso__element__text {
@@ -672,7 +723,7 @@ Página curso individual
 .profesor-curso__img-container{
     background-image: url(../assets/img/background-profesores.png);
     background-repeat: no-repeat;
-     background-position: 66% 50%;
+    background-position: 66% 50%;
     background-size: 78%;
 }
 
@@ -703,6 +754,45 @@ Página curso individual
 .faq-curso-img{
     width: 70%;
     align-self: center;
+}
+
+.mas-cursos{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+
+.mas-cursos__relacionados{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.button-curso{
+  width: 300px;
+  padding: 7px;
+  background-color: rgb(var(--primaryColor));
+  color: rgb(var(--white));
+  font-weight: 800;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.button-curso:hover{
+  transform: scale(1.1);
+}
+
+.button-curso--secondarycolor{
+  background-color: rgb(var(--secondaryColor));
+}
+
+.button-curso--thirdcolor{
+  background-color: rgb(var(--thirdColor));
 }
 
 /* 
@@ -931,6 +1021,16 @@ Media Querys
 
 @media (max-width: 420px){
 
+  .vacacional-contact__art,
+  .banner{
+    display: none;
+  }
+
+  .banner--mobile,
+  .vacacional-contact__art--mobile{
+    display: block;
+  }
+
   .title--presentacion,
   .presentacion__paragraph,
   .presentacion__destacado{
@@ -943,6 +1043,15 @@ Media Querys
 
   .presentacion__destacado{
     margin-bottom: 0;
+  }
+
+  .img-recital{
+    display: none;
+  }
+  
+  
+  .img-recital--mobile{
+    display: block;
   }
 
   .cursos__container{
@@ -1020,6 +1129,13 @@ Media Querys
     text-align: end;
   }
 
+  .beneficios-curso__title,
+  .caract-curso__title,
+  .profesor-curso__title,
+  .faq-curso__title{
+    font-size: 1.3rem;
+  }
+
   .beneficios-curso__content-container{
     flex-direction: column;
     justify-content: start;
@@ -1053,4 +1169,55 @@ Media Querys
 
 }
 
-/* Teléfono 360px*/
+/* Teléfono 360px (también en 320px*/
+
+@media (max-width: 360px) {
+
+  body{
+    font-size: 1rem;
+  }
+
+  .title,
+  .cursos-title{
+    font-size: 1.8rem;
+  }
+
+  .title--presentacion{
+    margin-top: 0.8em;
+    font-size: 1.8rem;
+  }
+
+  .presentacion__destacado__text{
+    padding: 27px 0.5em 0 0.5em;
+  }
+
+  .presentacion__destacado__paragraph{
+    margin-top: 0;
+  }
+
+  .salto-linea::after {
+  content: "\A";
+  white-space: pre;
+}
+
+  .curso-card__title,
+  .lista-cursos__curso__title{
+    font-size: 1.4rem;
+  }
+
+  .lista-cursos__curso__subtitle{
+    font-size: 1.05rem;
+  }
+
+  .beneficios-curso__title,
+  .caract-curso__title,
+  .profesor-curso__title,
+  .faq-curso__title{
+    font-size: 1.3rem;
+  }
+
+  .caract-curso__element__title{
+    width: 85%;    
+  }
+
+}

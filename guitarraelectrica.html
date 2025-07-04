@@ -12,11 +12,12 @@
 
         <!-- Google Fonts -->
             <!-- Manrope -->
-            <!-- Newsreader -->
+            <!-- Anton -->
+            <!-- Montserrat -->
 
              <link rel="preconnect" href="https://fonts.googleapis.com">
              <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-             <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+             <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
         <!-- Favicon -->
             <link rel="apple-touch-icon" sizes="57x57" href="./assets/favicon/apple-icon-57x57.png">
@@ -42,10 +43,12 @@
 
     <body class="layout">
         <header class="header">
-            <div class="logo-container">
-                <img class="logo" src="./assets/img/logo.png" alt="logo">
-                <img src="./assets/img/logo-tipografia.png" alt="logo text" class="logo-text">
-            </div>
+            <a href="./index.html">
+                <div class="logo-container">
+                    <img class="logo" src="./assets/img/logo.png" alt="logo">
+                    <p class="logo-text">Alamúsica</p>
+                </div>
+            </a>
             <!-- navigation menu start -->
                 <nav class="nav-menu">
                     <ul class="menu">
@@ -67,7 +70,7 @@
                 <img src="./assets/img/curso-guitarra-electrica.png" alt="Curso de guitarra eléctrica" class="header-curso__img">
                 <div class="header-curso__quote">
                     <h1 class="header-curso__title">"La guitarra es una extensión de quien soy"</h1>
-                    <p class="header-curso__subtitle">-Jimi Hendrix</p>
+                    <p class="header-curso__subtitle">- Jimi Hendrix</p>
                 </div>
             </article>
             <div class="curso-main-content">
@@ -160,7 +163,7 @@
     
                                 <img src="./assets/img/caracteristica-electrica-4.png" alt="caracteristica guitarra electrica 4" class="caract-curso__element__img">
                                 <p class="caract-curso__element__text">
-                                    Para tu comodidad, ofrecemos clases de piano a domicilio, permitiéndote aprender en tu propio espacio y con mayor tranquilidad. Es una opción ideal para quienes prefieren un entorno familiar y ahorrar tiempo sin salir de casa.
+                                    Para tu comodidad, ofrecemos clases de guitarra a domicilio, permitiéndote aprender en tu propio espacio y con mayor tranquilidad. Es una opción ideal para quienes prefieren un entorno familiar y ahorrar tiempo sin salir de casa.
                                 </p>
     
                             </div>
@@ -215,7 +218,7 @@
     
                 <article class="faq-curso">
     
-                    <h2 class="faq-curso_title title">Preguntas frecuentes sobre el curso:</h2>
+                    <h2 class="faq-curso__title title">Preguntas frecuentes sobre el curso:</h2>
                     
                     <section class="faq-curso__content">
                         
@@ -235,6 +238,17 @@
                 </article>
 
             </div>
+
+            <article class="mas-cursos">
+
+                <a href="./cursos.html" class="button-curso">Ver más cursos</a>
+
+                <div class="mas-cursos__relacionados">
+                    <a href="./guitarra.html" class="button-curso button-curso--secondarycolor">Curso de Guitarra</a>
+                    <a href="./piano.html" class="button-curso button-curso--thirdcolor">Curso de Piano</a>
+                </div>
+
+            </article>
 
         </main>
 
