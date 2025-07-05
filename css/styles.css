@@ -266,7 +266,7 @@ Layout
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url(../assets/img/background-notas-musicales-grande.png);
+    background-image: url(../assets/img/background-notas-musicales-grande.webp);
     background-repeat: no-repeat;
     background-position: 47% 85%;
     background-size: 80%;
@@ -347,7 +347,7 @@ Layout
     width: 100%;
     display: flex;
     flex-direction: column;
-    background-image: url(../assets/img/background-notas-musicales-pequeño.png);
+    background-image: url(../assets/img/background-notas-musicales-pequeño.webp);
     background-repeat: no-repeat;
     background-position: 10% 115%;
     background-size: 100%;
@@ -721,7 +721,7 @@ Página curso individual
 }
 
 .profesor-curso__img-container{
-    background-image: url(../assets/img/background-profesores.png);
+    background-image: url(../assets/img/background-profesores.webp);
     background-repeat: no-repeat;
     background-position: 66% 50%;
     background-size: 78%;
